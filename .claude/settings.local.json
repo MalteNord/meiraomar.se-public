@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(npm view:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(dir \"c:\\Dev\\meiraomar.se\\public\\images\" /O:S)",
+      "Bash(node scripts/optimize-images.mjs:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run lint:fix:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm audit fix:*)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

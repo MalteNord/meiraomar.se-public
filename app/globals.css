@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  /* Base theme */
+  --background: #0e0000;
+  --foreground: #ffffff;
+  --text-dim: #ffffff;
+
+  /* Reds */
+  --red-950: #1a0000;
+  --red-900: #250000;
+  --red-800: #3a0a0a;
+  --red-700: #520b0b;
+  --red-600: #6b0f0f;
+  --red-500: #8e1212;
+  --red-400: #a81414;
+  --red-300: #c72929;
+
+  /* Accents */
+  --rose-200: #ffd7d7;
+  --rose-100: #ffe9e9;
+  --muted: #bfa3a3;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --glow: rgba(255, 120, 120, 0.35);
+
+  /* Gradients */
+  --grad-cloud: radial-gradient(120% 80% at 60% 10%, #6b0f0f 0%, #250000 55%, #1a0000 100%);
+  --grad-nebula: linear-gradient(135deg, #520b0b 0%, #8e1212 40%, #250000 100%);
+  --grad-heart-glow: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(255, 120, 120, 0.25) 0%,
+    transparent 60%
+  );
+}
+
+@theme inline {
+  /* Colors mapped to Tailwind tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-dim: var(--text-dim);
+  --color-red-950: var(--red-950);
+  --color-red-900: var(--red-900);
+  --color-red-800: var(--red-800);
+  --color-red-700: var(--red-700);
+  --color-red-600: var(--red-600);
+  --color-red-500: var(--red-500);
+  --color-red-400: var(--red-400);
+  --color-red-300: var(--red-300);
+  --color-rose-200: var(--rose-200);
+  --color-rose-100: var(--rose-100);
+
+  /* Background images for gradients */
+  --background-image-grad-cloud: var(--grad-cloud);
+  --background-image-grad-nebula: var(--grad-nebula);
+  --background-image-grad-heart: var(--grad-heart-glow);
+
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-carattere: var(--font-carattere);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0000;
+    --foreground: #ffffff;
+  }
+}
+
+html {
+  color-scheme: dark;
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: #ffffff;
+  font-family: var(--font-display), "Bodoni Moda", serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display), "Bodoni Moda", serif;
+}
+
+.font-carattere {
+  font-family: var(--font-carattere), "Carattere", cursive;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.container-page {
+  @apply mx-auto px-4 sm:px-6 md:px-8;
+}
+
+.bg-cloud {
+  background-image: var(--grad-cloud);
+}
+
+.bg-nebula {
+  background-image: var(--grad-nebula);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}

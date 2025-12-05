@@ -1,0 +1,47 @@
+{
+  "name": "meiraomar.se",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run lint && next build",
+    "start": "next start",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "studio:dev": "sanity dev",
+    "dev:all": "npm-run-all -p dev studio:dev"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@sanity/client": "^7.13.1",
+    "@sanity/image-url": "^2.0.2",
+    "@sanity/vision": "^4.20.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.25",
+    "next": "^16.0.7",
+    "next-sanity": "^11.6.10",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-hook-form": "^7.68.0",
+    "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5",
+    "sanity": "^4.20.3",
+    "styled-components": "^6.1.19",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "baseline-browser-mapping": "^2.9.3",
+    "npm-run-all": "^4.1.5",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
